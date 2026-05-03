@@ -693,7 +693,6 @@ void CFrondEngine::BuildExtrusionVertices(SFrondGuide& sGuide)
         for (i = 0; i < sGuide.m_nCurrentIndex; ++i)
         {
             // T texcoords
-            st_assert(sGuide.m_nCurrentIndex != 0);
             float fT = static_cast<float>(i) / (sGuide.m_nCurrentIndex - 1.0f);
 
             // run through the points on either side of point in spine (calculate
