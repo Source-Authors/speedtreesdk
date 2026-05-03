@@ -111,13 +111,13 @@ void CProjectedShadow::ComputeTexCoords(CIndexedGeometry* pGeometry, stVec3 cCen
         // compute the s axis perpendicular bisector and s-coord
         stVec3 cBisectorS = ClosestPoint(cStartS, cEndS, cVertex);
         afTexCoords[0] = cStartS.Distance(cBisectorS) / (fRadius * 2.0f);
-        if (pShadowCoords)
+        if (pShadowCoords) //-V1051
             afTexCoords[0] = VecInterpolate(pShadowCoords[2], pShadowCoords[0], afTexCoords[0]);
 
         // compute the t axis perpendicular bisector and t-coord
         stVec3 cBisectorT = ClosestPoint(cStartT, cEndT, cVertex);
         afTexCoords[1] = cStartT.Distance(cBisectorT) / (fRadius * 2.0f);
-        if (pShadowCoords)
+        if (pShadowCoords) //-V1051
             afTexCoords[1] = VecInterpolate(pShadowCoords[5], pShadowCoords[1], afTexCoords[1]);
 
         // add the verex coord to the geometry

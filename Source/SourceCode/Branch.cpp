@@ -261,7 +261,7 @@ CFrondEngine::EConditions CBranch::Compute(unsigned int nSeed,
             bEverAboveFloor = true;
 
         float fAzimuthDisturbance = sInfo.GetDisturbance( )->ScaledVariance(0.0f);
-        float fPitchDisturbance = sInfo.GetDisturbance( )->ScaledVariance(0.0f);
+        float fPitchDisturbance = sInfo.GetDisturbance( )->ScaledVariance(0.0f); //-V656
         pFirstVertex->m_cTrans = cBaseTransform;
         stVec3 cRotAxis = cBaseTransform * cZAxis;
         
@@ -356,11 +356,11 @@ CFrondEngine::EConditions CBranch::Compute(unsigned int nSeed,
 
             // keep the branch from being perfectly straight
             float fLocalAzimuthDisturbance = sInfo.GetDisturbance( )->ScaledVariance(fProgress);
-            float fLocalPitchDisturbance = sInfo.GetDisturbance( )->ScaledVariance(fProgress);
+            float fLocalPitchDisturbance = sInfo.GetDisturbance( )->ScaledVariance(fProgress); //-V656
             pVertex->m_cTrans.RotateYZ(fLocalPitchDisturbance, fLocalAzimuthDisturbance);
 
             fGnarl = sInfo.m_fGnarl * sInfo.GetGnarlProfile( )->EvaluateWithoutVariance(fProgress);
-            if (bNegateGnarl)
+            if (bNegateGnarl) //-V1051
                 fGnarl = -fGnarl;
             //stRotTransform cGnarlTransform;
             cGnarlTransform.LoadIdentity( );

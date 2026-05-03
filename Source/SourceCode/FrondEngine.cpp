@@ -182,7 +182,7 @@ void CFrondEngine::Parse(CTreeFileAccess& cFile)
                 {
                     SFrondTexture sFrond;
                     nToken = cFile.ParseToken( ); // File_BeginFrondTexture
-                    nToken = cFile.ParseToken( );
+                    nToken = cFile.ParseToken( ); //-V519
                     do
                     {
                         switch (nToken)

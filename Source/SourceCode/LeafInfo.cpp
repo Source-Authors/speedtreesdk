@@ -169,7 +169,7 @@ void SIdvLeafInfo::Parse(CTreeFileAccess& cFile)
                 {
                     SIdvLeafTexture sLeaf;
                     nToken = cFile.ParseToken( ); // skip File_BeginLeafLevel
-                    nToken = cFile.ParseToken( );
+                    nToken = cFile.ParseToken( ); //-V519
                     do
                     {
                         switch (nToken)

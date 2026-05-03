@@ -785,7 +785,7 @@ inline stVec3 stVec3::operator-( ) const
 }
 
 // operator^
-inline float stVec3::operator^(const stVec3& cVec) const
+inline float stVec3::operator^(const stVec3& cVec) const //-V524
 {
     return m_afData[0] * cVec.m_afData[0] +
            m_afData[1] * cVec.m_afData[1] +

@@ -217,7 +217,7 @@ void CLeafGeometry::ComputeExtents(stRegion& cExtents) const
         // in all six orthographic directions.
 
         //  for (int nLod = 0; nLod < m_nNumLods; ++nLod)
-        for (int nLod = 0; nLod < 1; ++nLod) // now using only the highest LOD
+        for (int nLod = 0; nLod < 1; ++nLod) // now using only the highest LOD //-V1008
         {
             SLodGeometry* pLod = m_pLods + nLod;
             for (int j = 0; j < pLod->m_nNumLeaves; ++j)

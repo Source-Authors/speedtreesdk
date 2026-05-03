@@ -4072,7 +4072,7 @@ void* CSpeedTreeRT::operator new(size_t sSize)
 ///////////////////////////////////////////////////////////////////////
 //  CSpeedTreeRT::operator new[]
 
-void* CSpeedTreeRT::operator new[](size_t sSize)
+void* CSpeedTreeRT::operator new[](size_t sSize) //-V524
 {
     void* pBlock = g_pAllocator ? g_pAllocator->Alloc(sSize) : malloc(sSize);
     if (!pBlock)
@@ -4108,7 +4108,7 @@ void CSpeedTreeRT::operator delete(void* pBlock)
 ///////////////////////////////////////////////////////////////////////
 //  CSpeedTreeRT::operator delete[]
 
-void CSpeedTreeRT::operator delete[](void* pBlock)
+void CSpeedTreeRT::operator delete[](void* pBlock) //-V524
 {
     if (pBlock)
     {
