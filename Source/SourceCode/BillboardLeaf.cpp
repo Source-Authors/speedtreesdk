@@ -27,6 +27,8 @@
 CBillboardLeaf::CBillboardLeaf(const stVec3& cPos, short nColorScale, int nAngleIndex, float fWindWeight1, float fWindWeight2, int nWindGroup1, int nWindGroup2) :
     m_ucAngleIndex(static_cast<unsigned char>(nAngleIndex)),
     m_ucColorScale(static_cast<unsigned char>(nColorScale)),
+    // dimhotepus: Initialize in ctor initializer list for performance.
+    m_cPosition(cPos),
     m_ucTextureIndex(0u),
     m_fWindWeight1(st_clamp<float>(fWindWeight1, 0.0f, 1.0f)),
     m_fWindWeight2(st_clamp<float>(fWindWeight2, 0.0f, 1.0f)),
@@ -35,8 +37,6 @@ CBillboardLeaf::CBillboardLeaf(const stVec3& cPos, short nColorScale, int nAngle
 {
     // default the colors to white & opaque
     m_auiColors[0] = m_auiColors[1] = m_auiColors[2] = m_auiColors[3] = 0xffffffff;
-
-    m_cPosition = cPos;
 }
 
 
