@@ -3088,6 +3088,8 @@ unsigned char* CSpeedTreeRT::GetFrondGeometryMapIndexes(int nLodLevel) const
                 st_assert(nNumFrondStrips == nNumStrips);
                 const int* pAllStrips = m_pFrondGeometry->GetStrips(nLodLevel);
                 const unsigned char* pTexIndices = m_pFrondGeometry->GetVertexTexIndices( );
+                // dimhotepus: Check has inidexes.
+                st_assert(!!pTexIndices);
 
                 for (int i = 0; i < nNumStrips; ++i)
                 {
