@@ -56,7 +56,7 @@ void CProjectedShadow::Save(CTreeFileAccess& cFile) const
 
 void CProjectedShadow::Parse(CTreeFileAccess& cFile)
 {
-    int nToken = cFile.ParseToken( );
+    EFileToken nToken = cFile.ParseToken( );
     do
     {
         switch (nToken)

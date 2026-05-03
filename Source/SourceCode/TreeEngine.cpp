@@ -215,7 +215,7 @@ bool CTreeEngine::Parse(CTreeFileAccess& cFile)
 {
     bool bSuccess = false;
 
-    int nToken = cFile.ParseToken( );
+    EFileToken nToken = cFile.ParseToken( );
     if (nToken != File_BeginFile)
         throw(IdvFileError("missing begin_file token"));
 
@@ -436,14 +436,13 @@ void CTreeEngine::SetLodLimits(float fNear, float fFar)
 
 void CTreeEngine::ParseTreeInfo(CTreeFileAccess& cFile)
 {
-    int nToken = cFile.ParseToken( );
+    EFileToken nToken = cFile.ParseToken( );
     do
     {
         switch (nToken)
         {
             case File_Tree_BranchTexture:
                 cFile.ParseString(m_sTreeInfo.m_strBranchTextureFilename);
-                m_sTreeInfo.m_strBranchTextureFilename = m_sTreeInfo.m_strBranchTextureFilename;
                 break;
             case File_Tree_RandomSeed:
                 {
@@ -624,7 +623,7 @@ void CTreeEngine::ParseBranchInfo(CTreeFileAccess& cFile)
         m_vBranchInfo.push_back(pInfo);
     }
 
-    int nToken = cFile.ParseToken( );
+    EFileToken nToken = cFile.ParseToken( );
     if (nToken != File_EndBranchInfo)
         throw(IdvFileError("malformed branch data"));
 }
@@ -700,7 +699,7 @@ void CTreeEngine::ParseLeafCluster(CTreeFileAccess& cFile)
     st_delete_array<st_vector_leaves >(m_pLeafLods, "CTreeEngine::ParseLeafCluster, m_pLeafLods");
     m_pLeafLods = st_new_array<st_vector_leaves>(m_sLeafInfo.m_nNumLeafLodLevels, "CTreeEngine::ParseLeafCluster, m_pLeafLods");
 
-    int nToken = cFile.ParseToken( );
+    EFileToken nToken = cFile.ParseToken( );
     while (nToken != File_EndLeafCluster)
     {
         if (nLeafLod >= m_sLeafInfo.m_nNumLeafLodLevels)
@@ -798,7 +797,7 @@ void CTreeEngine::SaveLodInfo(CTreeFileAccess& cFile) const
 
 void CTreeEngine::ParseLodInfo(CTreeFileAccess& cFile)
 {
-    int nToken = cFile.ParseToken( );
+    EFileToken nToken = cFile.ParseToken( );
     do
     {
         switch (nToken)
@@ -1215,7 +1214,7 @@ void CTreeEngine::ParseSupplementalBranchInfo(CTreeFileAccess& cFile)
         if (cFile.ParseToken( ) != File_BeginBranch)
             throw(IdvFileError("malformed supplemental branch info"));
 
-        int nToken;
+        EFileToken nToken;
         do
         {
             nToken = cFile.ParseToken( );
@@ -1332,7 +1331,7 @@ void CTreeEngine::SaveFloorInfo(CTreeFileAccess& cFile) const
 
 void CTreeEngine::ParseFloorInfo(CTreeFileAccess& cFile)
 {
-    int nToken;
+    EFileToken nToken;
     do
     {
         nToken = cFile.ParseToken( );
@@ -1394,7 +1393,7 @@ void CTreeEngine::SaveLeafNormalSmoothing(CTreeFileAccess& cFile) const
 
 void CTreeEngine::ParseLeafNormalSmoothing(CTreeFileAccess& cFile)
 {
-    int nToken;
+    EFileToken nToken;
     do
     {
         nToken = cFile.ParseToken( );
@@ -1444,7 +1443,7 @@ void CTreeEngine::SaveClusterInfo(CTreeFileAccess& cFile) const
 
 void CTreeEngine::ParseClusterInfo(CTreeFileAccess& cFile)
 {
-    int nToken;
+    EFileToken nToken;
     do
     {
         nToken = cFile.ParseToken( );
@@ -1587,7 +1586,8 @@ void CTreeEngine::ParseTexCoordControls(CTreeFileAccess& cFile)
             if (cFile.ParseToken( ) != File_BeginControl)
                 throw(IdvFileError("malformed tex coord controls"));
 
-            int nToken = 0;
+            // dimhotepus: Type-safe parse token.
+            EFileToken nToken = File_Unknown;
             do
             {
                 nToken = cFile.ParseToken( );
@@ -1759,7 +1759,7 @@ void CTreeEngine::SaveMeshes(CTreeFileAccess& cFile) const
 
 void CTreeEngine::ParseMeshes(CTreeFileAccess& cFile)
 {
-    int nToken = cFile.ParseToken( );
+    EFileToken nToken = cFile.ParseToken( );
     do
     {
         switch (nToken)
@@ -1882,7 +1882,7 @@ void CTreeEngine::ParseLeafMeshInfo(CTreeFileAccess& cFile)
 {
     int nLeafCluster = 0;
 
-    int nToken = cFile.ParseToken( );
+    EFileToken nToken = cFile.ParseToken( );
     do
     {
         if (nToken == File_BeginLeafCluster)
@@ -1978,7 +1978,7 @@ void CTreeEngine::SaveSupplementalGlobalInfo(CTreeFileAccess& cFile) const
 
 void CTreeEngine::ParseSupplementalGlobalInfo(CTreeFileAccess& cFile)
 {
-    int nToken = cFile.ParseToken( );
+    EFileToken nToken = cFile.ParseToken( );
     do
     {
         switch (nToken)

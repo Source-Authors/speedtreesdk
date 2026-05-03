@@ -120,7 +120,7 @@ void SIdvLeafInfo::InitTables(int nNumTextures)
 
 void SIdvLeafInfo::Parse(CTreeFileAccess& cFile)
 {
-    int nToken = cFile.ParseToken( );
+    EFileToken nToken = cFile.ParseToken( );
     do
     {
         switch (nToken)
@@ -259,7 +259,8 @@ void SIdvLeafInfo::Save(CTreeFileAccess& cFile) const
     cFile.SaveFloat(m_fSpacingTolerance);
 
     cFile.SaveToken(File_Leaf_CollisionDetection);
-    cFile.SaveInt(m_eCollisionType);
+    // dimhotepus: Type-safe save.
+    cFile.SaveInt(static_cast<std::underlying_type_t<decltype(m_eCollisionType)>>(m_eCollisionType));
 
     // save the individual textures
     cFile.SaveToken(File_BeginSingleLeafInfo);

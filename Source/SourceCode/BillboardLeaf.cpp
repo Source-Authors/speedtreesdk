@@ -178,7 +178,7 @@ void CBillboardLeaf::Save(CTreeFileAccess& cFile) const
 
 void CBillboardLeaf::Parse(CTreeFileAccess& cFile, CBillboardLeaf& cLeaf)
 {
-    int nToken = cFile.ParseToken( );
+    EFileToken nToken = cFile.ParseToken( );
     do
     {
         switch (nToken)

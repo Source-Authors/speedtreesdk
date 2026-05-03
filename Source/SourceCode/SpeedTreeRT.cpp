@@ -1063,7 +1063,7 @@ bool CSpeedTreeRT::LoadTree(const unsigned char* pBlock, unsigned int nNumBytes)
             {
                 // new spt data is saved after all original format to maintain backward compatibility
                 bool bEndOfFile = false;
-                int nToken = cFile.ParseToken( );
+                EFileToken nToken = cFile.ParseToken( );
                 do
                 {
                     switch (nToken)
@@ -2678,7 +2678,7 @@ void CSpeedTreeRT::SetError(const char* pError)
 
 void CSpeedTreeRT::ParseLodInfo(CTreeFileAccess* pFile)
 {
-    int nToken = pFile->ParseToken( );
+    EFileToken nToken = pFile->ParseToken( );
     do
     {
         switch (nToken)
@@ -2716,7 +2716,7 @@ void CSpeedTreeRT::ParseLodInfo(CTreeFileAccess* pFile)
 
 void CSpeedTreeRT::ParseWindInfo(CTreeFileAccess* pFile)
 {
-    int nToken = pFile->ParseToken( );
+    EFileToken nToken = pFile->ParseToken( );
     do
     {
         switch (nToken)
@@ -2744,7 +2744,7 @@ void CSpeedTreeRT::ParseTextureCoordInfo(CTreeFileAccess* pFile)
 {
     m_pEmbeddedTexCoords = new ("CSpeedTreeRT::ParseTextureCoordInfo, m_pEmbeddedTexCoords") SEmbeddedTexCoords;
 
-    int nToken = pFile->ParseToken( );
+    EFileToken nToken = pFile->ParseToken( );
     do
     {
         switch (nToken)
@@ -2872,7 +2872,7 @@ void CSpeedTreeRT::ParseCollisionObjects(CTreeFileAccess* pFile)
 {
     m_pCollisionObjects = new ("CSpeedTreeRT::ParseCollisionObjects, m_pCollisionObjects") SCollisionObjects;
 
-    int nToken = pFile->ParseToken( );
+    EFileToken nToken = pFile->ParseToken( );
     do
     {
         SShape sShape;
@@ -2909,7 +2909,7 @@ void CSpeedTreeRT::ParseCollisionObjects(CTreeFileAccess* pFile)
         case CSpeedTreeRT::CO_BOX:
             sShape.m_afDimensions[0] = pFile->ParseFloat( );    // x
             sShape.m_afDimensions[1] = pFile->ParseFloat( );    // y
-            sShape.m_afDimensions[2] = pFile->ParseFloat( );    // z
+            sShape.m_afDimensions[2] = pFile->ParseFloat( );    // z //-V656
             break;
         default:
             throw(IdvFileError("unknown collision object type"));
@@ -3495,7 +3495,7 @@ void CSpeedTreeRT::SaveUserData(CTreeFileAccess* pFile) const
 
 void CSpeedTreeRT::ParseUserData(CTreeFileAccess* pFile)
 {
-    int nToken = pFile->ParseToken( );
+    EFileToken nToken = pFile->ParseToken( );
     do
     {
         switch (nToken)
@@ -3676,7 +3676,7 @@ void CSpeedTreeRT::ParseSupplementalTexCoordInfo(CTreeFileAccess* pFile)
 {
     if (m_pEmbeddedTexCoords)
     {
-        int nToken = pFile->ParseToken( );
+        EFileToken nToken = pFile->ParseToken( );
         do
         {
             switch (nToken)
@@ -3838,7 +3838,7 @@ void CSpeedTreeRT::SaveStandardShaderInfo(CTreeFileAccess& cFile) const
 
 void CSpeedTreeRT::ParseStandardShaderInfo(CTreeFileAccess& cFile)
 {
-    int nToken = cFile.ParseToken( );
+    EFileToken nToken = cFile.ParseToken( );
     do
     {
         switch (nToken)
@@ -4301,7 +4301,7 @@ void CSpeedTreeRT::ParseSupplementalCollisionObjectsInfo(CTreeFileAccess& cFile)
     if (m_pCollisionObjects)
     {
         int nIndex = 0;
-        int nToken = cFile.ParseToken( );
+        EFileToken nToken = cFile.ParseToken( );
         do
         {
             if (nToken == File_BeginCollisionObject && nIndex < int(m_pCollisionObjects->m_vObjects.size( )))
@@ -4389,7 +4389,7 @@ void CSpeedTreeRT::SaveSupplementalLodInfo(CTreeFileAccess& cFile) const
 
 void CSpeedTreeRT::ParseSupplementalLodInfo(CTreeFileAccess& cFile)
 {
-    int nToken = cFile.ParseToken( );
+    EFileToken nToken = cFile.ParseToken( );
     do
     {
         switch (nToken)

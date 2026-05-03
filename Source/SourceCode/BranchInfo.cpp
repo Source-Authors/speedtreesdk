@@ -75,7 +75,7 @@ SIdvBranchInfo* SIdvBranchInfo::Parse(CTreeFileAccess& cFile)
 {
     SIdvBranchInfo* pInfo = new ("SIdvBranchInfo::Parse, pInfo") SIdvBranchInfo;
 
-    int nToken = cFile.ParseToken( );
+    EFileToken nToken = cFile.ParseToken( );
     if (nToken != File_BeginBranchLevel)
         throw(IdvFileError("malformed branch data"));
 
@@ -155,7 +155,7 @@ void SIdvBranchInfo::ParseThis(CTreeFileAccess& cFile)
 {
     SIdvBranchInfo* pInfo = this;
 
-    int nToken = cFile.ParseToken( );
+    EFileToken nToken = cFile.ParseToken( );
     if (nToken != File_BeginBranchLevel)
         throw(IdvFileError("malformed branch data"));
 
@@ -292,7 +292,7 @@ void SIdvBranchInfo::Save(CTreeFileAccess& cFile) const
 
 void SIdvBranchInfo::ParseSupplemental(CTreeFileAccess& cFile)
 {
-    int nToken = cFile.ParseToken( );
+    EFileToken nToken = cFile.ParseToken( );
     do
     {
         switch (nToken)

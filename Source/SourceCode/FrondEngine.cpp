@@ -130,7 +130,7 @@ bool CFrondEngine::Enabled(void) const
 
 void CFrondEngine::Parse(CTreeFileAccess& cFile)
 {
-    int nToken = cFile.ParseToken( );
+    EFileToken nToken = cFile.ParseToken( );
     do
     {
         switch (nToken)
@@ -1156,7 +1156,7 @@ void CFrondEngine::SaveSupplementalInfo(CTreeFileAccess& cFile) const
 
 void CFrondEngine::ParseSupplementalInfo(CTreeFileAccess& cFile)
 {
-    int nToken = cFile.ParseToken( );
+    EFileToken nToken = cFile.ParseToken( );
     do
     {
         switch (nToken)

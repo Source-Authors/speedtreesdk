@@ -822,7 +822,7 @@ void CBranch::Parse(CTreeFileAccess& cFile)
     for (int i = 0; i < nSize; ++i)
     {
         SIdvBranchInfo sInfo;
-        int nToken = cFile.ParseToken( );
+        EFileToken nToken = cFile.ParseToken( );
         if (nToken != File_BeginBranchLevel)
             throw(IdvFileError("malformed branch data"));
 
@@ -889,7 +889,7 @@ void CBranch::Parse(CTreeFileAccess& cFile)
         } while (nToken != File_EndBranchLevel);
     }
 
-    int nToken = cFile.ParseToken( );
+    EFileToken nToken = cFile.ParseToken( );
     if (nToken != File_EndBranchInfo)
         throw(IdvFileError("malformed branch data"));
 }

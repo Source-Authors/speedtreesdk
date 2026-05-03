@@ -33,7 +33,7 @@ SIdvWindInfo::SIdvWindInfo( ) :
 
 void SIdvWindInfo::Parse(CTreeFileAccess& cFile)
 {
-    int nToken = cFile.ParseToken( );
+    EFileToken nToken = cFile.ParseToken( );
     do
     {
         switch (nToken)

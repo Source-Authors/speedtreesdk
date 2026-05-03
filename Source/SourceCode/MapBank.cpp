@@ -70,7 +70,7 @@ void CMapBank::Save(CTreeFileAccess& cFile) const
 
 void CMapBank::Parse(CTreeFileAccess& cFile)
 {
-    int nToken;
+    EFileToken nToken;
     do
     {
         nToken = cFile.ParseToken( );
@@ -168,7 +168,7 @@ void CMapBank::ParseMapCollection(SMapCollection& sCollection, CTreeFileAccess& 
     if (cFile.ParseToken( ) != File_BeginMapCollection)
         throw(IdvFileError("malformed map collection"));
 
-    int nToken;
+    EFileToken nToken;
     do
     {
         nToken = cFile.ParseToken( );

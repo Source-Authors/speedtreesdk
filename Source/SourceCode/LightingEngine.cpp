@@ -329,7 +329,8 @@ void CLightingEngine::Save(CTreeFileAccess& cFile)
     cFile.SaveToken(File_BeginLightingInfo);
 
     cFile.SaveToken(File_BranchLightingMethod);
-    cFile.SaveInt(m_eBranchLightingMethod);
+    // dimhotepus: Type-safe save.
+    cFile.SaveInt(static_cast<std::underlying_type_t<decltype(m_eBranchLightingMethod)>>(m_eBranchLightingMethod));
 
     cFile.SaveToken(File_BranchMaterial);
     int i = 0; // declared outside of the for-scope for portability
@@ -347,10 +348,11 @@ void CLightingEngine::Save(CTreeFileAccess& cFile)
     cFile.SaveFloat(m_fLeafLightingAdjustmentScalar);
 
     cFile.SaveToken(File_StaticLightingStyle);
-    cFile.SaveInt(m_eStaticLightingStyle);
+    // dimhotepus: Type-safe save.
+    cFile.SaveInt(static_cast<std::underlying_type_t<decltype(m_eStaticLightingStyle)>>(m_eStaticLightingStyle));
 
     cFile.SaveToken(File_FrondLightingMethod);
-    cFile.SaveInt(m_eFrondLightingMethod);
+    cFile.SaveInt(static_cast<std::underlying_type_t<decltype(m_eFrondLightingMethod)>>(m_eFrondLightingMethod));
 
     cFile.SaveToken(File_FrondMaterial);
     for (i = 0; i < c_nMaterialParamSize; ++i)
@@ -365,7 +367,7 @@ void CLightingEngine::Save(CTreeFileAccess& cFile)
 
 void CLightingEngine::Parse(CTreeFileAccess& cFile)
 {
-    int nToken = cFile.ParseToken( );
+    EFileToken nToken = cFile.ParseToken( );
     do
     {
         switch (nToken)

@@ -41,7 +41,7 @@ SRootSupportInfo::SRootSupportInfo( ) :
 
 void SRootSupportInfo::Parse(CTreeFileAccess& cFile)
 {
-    int nToken;
+    EFileToken nToken;
     do
     {
         nToken = cFile.ParseToken( );
