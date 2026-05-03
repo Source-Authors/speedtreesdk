@@ -114,7 +114,7 @@ public:
         stVec3(float fX, float fY, float fZ);
         stVec3(float fX, float fY);
         stVec3(const float* pPos); // assumes three points
-        ~stVec3( ) { } // do nothing 
+        ~stVec3( ) = default; // do nothing 
 
         //  inspectors
         stVec3      AbsoluteValue( ) const;
