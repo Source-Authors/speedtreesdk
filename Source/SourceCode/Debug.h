@@ -15,9 +15,6 @@
 //      http://www.idvinc.com
 
 #pragma once
-#ifdef WIN32
-#pragma warning (disable : 4702)
-#endif
 #include <cstdlib>
 #include "SpeedTreeMemory.h"
 

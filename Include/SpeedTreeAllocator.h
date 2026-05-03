@@ -17,9 +17,6 @@
 //  *** Release version 4.1 ***
 
 #pragma once
-#ifdef WIN32
-#pragma warning (disable : 4786)
-#endif
 
 #include <map>
 #include <vector>

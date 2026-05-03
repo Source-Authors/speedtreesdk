@@ -16,9 +16,6 @@
 
 #ifdef TRACK_ALLOC_STATS
 
-#ifdef WIN32
-#pragma warning (disable : 4702 4221) // disable warning about unreachable code in xtree
-#endif
 #define ALLOCATOR_SOURCE_FILE
 #include "SpeedTreeAllocator.h"
 

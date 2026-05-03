@@ -17,7 +17,7 @@
 #pragma once
 #include "TreeEngine.h"
 #include "StructsInfo.h"
-#if defined(WIN32) || defined(_XBOX)
+#if defined(_XBOX)
 #pragma warning (disable : 4512)
 #endif
 

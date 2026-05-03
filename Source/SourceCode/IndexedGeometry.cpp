@@ -14,9 +14,6 @@
 //      IDV, Inc.
 //      http://www.idvinc.com
 
-#ifdef WIN32
-#pragma warning (disable : 4786)
-#endif
 #include "WindEngine.h"
 #include "IndexedGeometry.h"
 #include "UpVector.h"

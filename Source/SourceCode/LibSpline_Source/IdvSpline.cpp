@@ -14,10 +14,6 @@
 //      IDV, Inc.
 //      http://www.idvinc.com
 
-#ifdef WIN32
-#pragma warning (disable : 4786)
-#endif
-
 #include "../Debug.h"
 #include "IdvSpline.h"
 #include "../LibRandom_Source/IdvRandom.h"

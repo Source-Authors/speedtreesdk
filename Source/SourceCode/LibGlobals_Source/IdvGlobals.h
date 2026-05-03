@@ -16,7 +16,7 @@
 
 #pragma once
 #if defined(WIN32) || defined(_XBOX)
-#pragma warning (disable : 4786 4996)
+#pragma warning (disable : 4996)
 #ifdef STRIP_EXCEPTION_HANDLING
 #pragma warning (disable : 4530)
 #endif

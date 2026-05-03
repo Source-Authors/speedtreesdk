@@ -14,10 +14,6 @@
 //      IDV, Inc.
 //      http://www.idvinc.com
 
-#ifdef WIN32
-#pragma warning (disable : 4996) // std::_Copy_opt declared deprecated in VC8
-#endif
-
 #include "FileAccess.h"
 #include "Endian.h"
 using namespace std;

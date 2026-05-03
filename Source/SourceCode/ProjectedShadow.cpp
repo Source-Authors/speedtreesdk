@@ -14,9 +14,6 @@
 //      IDV, Inc.
 //      http://www.idvinc.com
 
-#ifdef WIN32
-#pragma warning (disable : 4786) // VC6 stl files cause warnings
-#endif
 #include "ProjectedShadow.h"
 #include "LibGlobals_Source/IdvGlobals.h"
 #include "LibFilename_Source/IdvFilename.h"
