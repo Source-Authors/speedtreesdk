@@ -541,7 +541,8 @@ CFrondEngine::EConditions CBranch::Compute(unsigned int nSeed,
 
                 // what's the vertex weight where the child will be spawned?
                 float fWeightAtChild1 = fWindWeight1;
-                float fWeightAtChild2 = fWindWeight1;
+                // dimhotepus: Correctly init weight at child 2.
+                float fWeightAtChild2 = fWindWeight2;
                 //if (nLevel - 1 == m_nWeightLevel || m_bPropagateFlexibility)
                 //{
                     fWeightAtChild1 = VecInterpolate(m_pVertices[sBranch.m_nPreVertexIndex].m_fWindWeight1, m_pVertices[sBranch.m_nPreVertexIndex + 1].m_fWindWeight1, sBranch.m_fPercent);
