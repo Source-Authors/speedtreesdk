@@ -684,7 +684,6 @@ CSpeedTreeRT::CSpeedTreeRT(const CSpeedTreeRT* pOrig) :
 {
     try
     {
-        st_assert(pOrig);
         st_assert(pOrig->m_pEngine);
         st_assert(m_pInstanceRefCount);
 
@@ -3439,7 +3438,6 @@ void CSpeedTreeRT::ComputeSelfShadowTexCoords(void)
 void CSpeedTreeRT::SetLeafTextureCoords(unsigned int nLeafMapIndex, const float* pTexCoords)
 {
     st_assert(m_pEngine);
-    st_assert(nLeafMapIndex >= 0);
     st_assert(pTexCoords);
     st_assert(m_pLeafGeometry);
 
