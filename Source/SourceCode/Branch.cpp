@@ -342,7 +342,8 @@ CFrondEngine::EConditions CBranch::Compute(unsigned int nSeed,
             float fLocalVertexFlexibility = fFlexibility * (sInfo.GetFlexibilityScale( )->Evaluate(fProgress));
 
             // adjust growth direction, taking disturbance into account
-            pVertex->m_cTrans = pLastVertex->m_cTrans;
+            // dimhotepus: Prevent nullptr dereference.
+            pVertex->m_cTrans = pLastVertex ? pLastVertex->m_cTrans : cBaseTransform;
             pVertex->m_cDirection = g_cOut * pVertex->m_cTrans;
 
             // adjust for gravity effect
