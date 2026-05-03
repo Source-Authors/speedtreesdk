@@ -3084,7 +3084,8 @@ unsigned char* CSpeedTreeRT::GetFrondGeometryMapIndexes(int nLodLevel) const
 
                 int nNumStrips = 0;
                 const int* pStripInfo = m_pFrondGeometry->GetStripInfo(nLodLevel, nNumStrips);
-                st_assert(nNumFrondStrips == nNumFrondStrips);
+                // dimhotepus: Correctly assert.
+                st_assert(nNumFrondStrips == nNumStrips);
                 const int* pAllStrips = m_pFrondGeometry->GetStrips(nLodLevel);
                 const unsigned char* pTexIndices = m_pFrondGeometry->GetVertexTexIndices( );
 
