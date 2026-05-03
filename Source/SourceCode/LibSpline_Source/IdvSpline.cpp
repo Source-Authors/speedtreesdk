@@ -279,6 +279,8 @@ static const char* NextToken(const char* pInput, char (&pToken)[szToken])
     fmt[std::size(fmt) - 1] = '\0';
 
     sscanf(pInput, fmt, pToken);
+    // dimhotepus: Ensure token zero-terminated.
+    pToken[szToken - 1] = '\0';
 
     return pInput + strlen(pToken);
 }
