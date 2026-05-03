@@ -68,10 +68,7 @@ struct SIdvLeafTexture
             m_fRotate(0.0f)
         {
         }
-        ~SIdvLeafTexture( )
-        {
-            // do nothing
-        }
+        ~SIdvLeafTexture( ) = default;  // do nothing
 
         bool                m_bBlossom;             // flag that specifies if this texture can be used as a blossom texture
         stVec3              m_cColor;               // base color for the leaf texture  
@@ -164,10 +161,7 @@ struct SIdvBranchFlare
             m_fDistance(0.0f)
         {
         }
-        ~SIdvBranchFlare( )
-        {
-            // do nothing
-        }
+        ~SIdvBranchFlare( ) = default; // do nothing
 
         float       m_fAngle;                       // angle of the center of the flare
         float       m_fRadialInfluence;             // angle within which branch vertices are affected by this flare

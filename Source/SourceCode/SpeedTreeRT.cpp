@@ -165,10 +165,7 @@ struct SShape
             m_afDimensions[0] = m_afDimensions[1] = m_afDimensions[2] = 0.0f;
             m_afRotation[0] = m_afRotation[1] = m_afRotation[2] = 0.0f;
         }
-        ~SShape( )
-        {
-            // do nothing
-        }
+        ~SShape( ) = default;  // do nothing
 
         CSpeedTreeRT::ECollisionObjectType  m_eType;            // CO_SPHERE, CO_CYLINDER, or CO_BOX
         float                               m_afPosition[3];    // center of shape
