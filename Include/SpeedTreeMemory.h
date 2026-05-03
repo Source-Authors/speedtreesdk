@@ -26,6 +26,8 @@
 #include <functional>
 #include <string>
 #include <map>
+// dimhotepus: For std::allocator
+#include <memory>
 #include <vector>
 #include <algorithm>
 // ps3 (malloc and ptrdiff_t)
@@ -225,16 +227,10 @@ template <typename TYPE> inline void st_delete_array(TYPE*& pRawBlock, const cha
 #ifdef TRACK_ALLOC_STATS
 
 #define DefineAllocator(NAME)                               \
-template<typename TYPE>                                     \
+template<typename TYPE> : public std::allocator<TYPE>       \
 class NAME                                                  \
 {                                                           \
 public:                                                     \
-    typedef _SIZT size_type;                                \
-    typedef _PDFT difference_type;                          \
-    typedef TYPE _FARQ *pointer;                            \
-    typedef const TYPE _FARQ *const_pointer;                \
-    typedef TYPE _FARQ& reference;                          \
-    typedef const TYPE _FARQ& const_reference;              \
     typedef TYPE value_type;                                \
                                                             \
     template<typename _Other>                               \
@@ -309,17 +305,17 @@ public:                                                     \
                                                             \
     void construct(pointer _Ptr, const TYPE& _Val)          \
     {                                                       \
-        std::_Construct(_Ptr, _Val);                        \
+        std::allocator<TYPE>::construct(_Ptr, _Val);        \
     }                                                       \
                                                             \
     void destroy(pointer _Ptr)                              \
     {                                                       \
-        std::_Destroy(_Ptr);                                \
+        std::allocator<TYPE>::destroy(_Ptr);                \
     }                                                       \
                                                             \
-    _SIZT max_size() const                                  \
+    std::size_t max_size() const                            \
     {                                                       \
-        _SIZT _Count = (_SIZT)(-1) / sizeof (TYPE);         \
+        std::size_t _Count = (std::size_t)(-1) / sizeof (TYPE);         \
         return (0 < _Count ? _Count : 1);                   \
     }                                                       \
 };
@@ -328,17 +324,9 @@ public:                                                     \
 
 #define DefineAllocator(NAME)                               \
 template<typename TYPE>                                     \
-class NAME                                                  \
+class NAME : public std::allocator<TYPE>                    \
 {                                                           \
 public:                                                     \
-    typedef _SIZT size_type;                                \
-    typedef _PDFT difference_type;                          \
-    typedef TYPE _FARQ *pointer;                            \
-    typedef const TYPE _FARQ *const_pointer;                \
-    typedef TYPE _FARQ& reference;                          \
-    typedef const TYPE _FARQ& const_reference;              \
-    typedef TYPE value_type;                                \
-                                                            \
     template<typename _Other>                               \
     struct rebind                                           \
     {                                                       \
@@ -405,17 +393,17 @@ public:                                                     \
                                                             \
     void construct(pointer _Ptr, const TYPE& _Val)          \
     {                                                       \
-        std::_Construct(_Ptr, _Val);                        \
+        std::allocator<TYPE>::construct(_Ptr, _Val);        \
     }                                                       \
                                                             \
     void destroy(pointer _Ptr)                              \
     {                                                       \
-        std::_Destroy(_Ptr);                                \
+        std::allocator<TYPE>::destroy(_Ptr);                \
     }                                                       \
                                                             \
-    _SIZT max_size() const                                  \
+    std::size_t max_size() const                            \
     {                                                       \
-        _SIZT _Count = (_SIZT)(-1) / sizeof (TYPE);         \
+        std::size_t _Count = (std::size_t)(-1) / sizeof (TYPE);         \
         return (0 < _Count ? _Count : 1);                   \
     }                                                       \
 };

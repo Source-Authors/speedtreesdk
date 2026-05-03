@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx</Extensions>
+    </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{6d3f4b6a-0821-4169-9ad4-1f9805ca8e88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphics Support">
+      <UniqueIdentifier>{17c47bee-e9ff-4e85-8ce7-5902d93a44f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utility Classes">
+      <UniqueIdentifier>{dfaf831b-1154-4cf7-b5ee-d55206efe0a8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\CommonSource\Environment.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CommonSource\SpeedTreeCullEngine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CommonSource\SpeedTreeForest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CommonSource\SpeedTreeInstance.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CommonSource\SpeedTreeWrapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CommonSource\IdvDDS.cpp">
+      <Filter>Graphics Support</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CommonSource\IdvGeometryBuffer.cpp">
+      <Filter>Graphics Support</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CommonSource\IdvShaderManager.cpp">
+      <Filter>Graphics Support</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CommonSource\IdvState.cpp">
+      <Filter>Graphics Support</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CommonSource\IdvTexture.cpp">
+      <Filter>Graphics Support</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CommonSource\IdvAutoCamera.cpp">
+      <Filter>Utility Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CommonSource\IdvCommandLineParser.cpp">
+      <Filter>Utility Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CommonSource\IdvMouseNavigation.cpp">
+      <Filter>Utility Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CommonSource\IdvNavigationBase.cpp">
+      <Filter>Utility Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CommonSource\IdvTimer.cpp">
+      <Filter>Utility Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CommonSource\IdvVectorMath.cpp">
+      <Filter>Utility Classes</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\CommonSource\Environment.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonSource\SpeedTreeBillboard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonSource\SpeedTreeCullEngine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonSource\SpeedTreeForest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonSource\SpeedTreeInstance.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonSource\SpeedTreeWrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonSource\SpeedWind2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonSource\glew.h">
+      <Filter>Graphics Support</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonSource\glut.h">
+      <Filter>Graphics Support</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonSource\IdvDDS.h">
+      <Filter>Graphics Support</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonSource\IdvGeometryBuffer.h">
+      <Filter>Graphics Support</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonSource\IdvMaterial.h">
+      <Filter>Graphics Support</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonSource\IdvOpenGL.h">
+      <Filter>Graphics Support</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonSource\IdvShaderManager.h">
+      <Filter>Graphics Support</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonSource\IdvState.h">
+      <Filter>Graphics Support</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonSource\IdvTexture.h">
+      <Filter>Graphics Support</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonSource\IdvAutoCamera.h">
+      <Filter>Utility Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonSource\IdvCommandLineParser.h">
+      <Filter>Utility Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonSource\IdvFilename.h">
+      <Filter>Utility Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonSource\IdvGlobal.h">
+      <Filter>Utility Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonSource\IdvMouseNavigation.h">
+      <Filter>Utility Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonSource\IdvNavigationBase.h">
+      <Filter>Utility Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonSource\IdvRandom.h">
+      <Filter>Utility Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonSource\IdvTimer.h">
+      <Filter>Utility Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonSource\IdvVectorMath.h">
+      <Filter>Utility Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonSource\stl_vector.h">
+      <Filter>Utility Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonSource\UpVector.h">
+      <Filter>Utility Classes</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="..\..\bin\Data\Shaders\Billboard.fx">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="..\..\bin\Data\Shaders\Branch.fx">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="..\..\Bin\Data\Shaders\CompileCommands.fx">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="..\..\bin\Data\Shaders\Frond.fx">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="..\..\Bin\Data\Shaders\Ground.fx">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="..\..\bin\Data\Shaders\Leaf.fx">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="..\..\bin\Data\Shaders\SpeedTree.fx">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="..\..\bin\Data\Shaders\Utility.fx">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+  </ItemGroup>
+</Project>

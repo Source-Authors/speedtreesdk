@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>18.0</VCProjectVersion>
+    <ProjectName>OpenGL</ProjectName>
+    <ProjectGuid>{A4C66BFF-F6EF-475A-9DD3-4929FBF5ACCF}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>18.0.11722.363</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\CommonSource;.;../../include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;IDV_OPENGL;_CRT_SECURE_NO_DEPRECATE;UPVECTOR_POS_Z;BRANCH_DETAIL_LAYER;BRANCH_NORMAL_MAPPING;LEAF_NORMAL_MAPPING;FROND_NORMAL_MAPPING;INTERMEDIATE_FRONDBRANCH_FADING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>cgGL.lib;cg.lib;SpeedTreeRT_Static_d.lib;glut32.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>..\..\bin\vc14\$(PlatformShortName)\OpenGL_Sample_d.exe</OutputFile>
+      <AdditionalLibraryDirectories>..\CommonSource\lib;..\..\lib\vc14\$(PlatformShortName);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)OpenGL.pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <FxCompile />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\CommonSource;.;../../include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;IDV_OPENGL;_CRT_SECURE_NO_DEPRECATE;UPVECTOR_POS_Z;BRANCH_DETAIL_LAYER;BRANCH_NORMAL_MAPPING;LEAF_NORMAL_MAPPING;FROND_NORMAL_MAPPING;INTERMEDIATE_FRONDBRANCH_FADING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>cgGL.lib;cg.lib;SpeedTreeRT_Static_d.lib;glut32.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>..\..\bin\vc14\$(PlatformShortName)\OpenGL_Sample_d.exe</OutputFile>
+      <AdditionalLibraryDirectories>..\CommonSource\lib;..\..\lib\vc14\$(PlatformShortName);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)OpenGL.pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <FxCompile />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\CommonSource;.;../../include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;IDV_OPENGL;_CRT_SECURE_NO_DEPRECATE;UPVECTOR_POS_Z;BRANCH_DETAIL_LAYER;BRANCH_NORMAL_MAPPING;LEAF_NORMAL_MAPPING;FROND_NORMAL_MAPPING;INTERMEDIATE_FRONDBRANCH_FADING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FloatingPointModel>Strict</FloatingPointModel>
+      <PrecompiledHeader />
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>cgGL.lib;cg.lib;glut32.lib;glew32.lib;SpeedTreeRT_Static.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>..\..\bin\vc14\$(PlatformShortName)\OpenGL_Sample.exe</OutputFile>
+      <AdditionalLibraryDirectories>..\CommonSource\lib;..\..\lib\vc14\$(PlatformShortName);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <FxCompile />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\CommonSource;.;../../include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;IDV_OPENGL;_CRT_SECURE_NO_DEPRECATE;UPVECTOR_POS_Z;BRANCH_DETAIL_LAYER;BRANCH_NORMAL_MAPPING;LEAF_NORMAL_MAPPING;FROND_NORMAL_MAPPING;INTERMEDIATE_FRONDBRANCH_FADING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FloatingPointModel>Strict</FloatingPointModel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>cgGL.lib;cg.lib;glut32.lib;glew32.lib;SpeedTreeRT_Static.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>..\..\bin\vc14\$(PlatformShortName)\OpenGL_Sample.exe</OutputFile>
+      <AdditionalLibraryDirectories>..\CommonSource\lib;..\..\lib\vc14\$(PlatformShortName);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+    </Link>
+    <FxCompile />
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\CommonSource\Environment.cpp" />
+    <ClCompile Include="..\CommonSource\IdvAutoCamera.cpp" />
+    <ClCompile Include="..\CommonSource\IdvCommandLineParser.cpp" />
+    <ClCompile Include="..\CommonSource\IdvDDS.cpp" />
+    <ClCompile Include="..\CommonSource\IdvGeometryBuffer.cpp" />
+    <ClCompile Include="..\CommonSource\IdvMouseNavigation.cpp" />
+    <ClCompile Include="..\CommonSource\IdvNavigationBase.cpp" />
+    <ClCompile Include="..\CommonSource\IdvShaderManager.cpp" />
+    <ClCompile Include="..\CommonSource\IdvState.cpp" />
+    <ClCompile Include="..\CommonSource\IdvTexture.cpp" />
+    <ClCompile Include="..\CommonSource\IdvTimer.cpp" />
+    <ClCompile Include="..\CommonSource\IdvVectorMath.cpp" />
+    <ClCompile Include="..\CommonSource\SpeedTreeCullEngine.cpp" />
+    <ClCompile Include="..\CommonSource\SpeedTreeForest.cpp" />
+    <ClCompile Include="..\CommonSource\SpeedTreeInstance.cpp" />
+    <ClCompile Include="..\CommonSource\SpeedTreeWrapper.cpp" />
+    <ClCompile Include="Main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\CommonSource\Environment.h" />
+    <ClInclude Include="..\CommonSource\glew.h" />
+    <ClInclude Include="..\CommonSource\glut.h" />
+    <ClInclude Include="..\CommonSource\IdvAutoCamera.h" />
+    <ClInclude Include="..\CommonSource\IdvCommandLineParser.h" />
+    <ClInclude Include="..\CommonSource\IdvDDS.h" />
+    <ClInclude Include="..\CommonSource\IdvFilename.h" />
+    <ClInclude Include="..\CommonSource\IdvGeometryBuffer.h" />
+    <ClInclude Include="..\CommonSource\IdvGlobal.h" />
+    <ClInclude Include="..\CommonSource\IdvMaterial.h" />
+    <ClInclude Include="..\CommonSource\IdvMouseNavigation.h" />
+    <ClInclude Include="..\CommonSource\IdvNavigationBase.h" />
+    <ClInclude Include="..\CommonSource\IdvOpenGL.h" />
+    <ClInclude Include="..\CommonSource\IdvRandom.h" />
+    <ClInclude Include="..\CommonSource\IdvShaderManager.h" />
+    <ClInclude Include="..\CommonSource\IdvState.h" />
+    <ClInclude Include="..\CommonSource\IdvTexture.h" />
+    <ClInclude Include="..\CommonSource\IdvTimer.h" />
+    <ClInclude Include="..\CommonSource\IdvVectorMath.h" />
+    <ClInclude Include="..\CommonSource\SpeedTreeBillboard.h" />
+    <ClInclude Include="..\CommonSource\SpeedTreeCullEngine.h" />
+    <ClInclude Include="..\CommonSource\SpeedTreeForest.h" />
+    <ClInclude Include="..\CommonSource\SpeedTreeInstance.h" />
+    <ClInclude Include="..\CommonSource\SpeedTreeWrapper.h" />
+    <ClInclude Include="..\CommonSource\SpeedWind2.h" />
+    <ClInclude Include="..\CommonSource\stl_vector.h" />
+    <ClInclude Include="..\CommonSource\UpVector.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="..\..\bin\Data\Shaders\Billboard.fx" />
+    <FxCompile Include="..\..\bin\Data\Shaders\Branch.fx" />
+    <FxCompile Include="..\..\Bin\Data\Shaders\CompileCommands.fx" />
+    <FxCompile Include="..\..\bin\Data\Shaders\Frond.fx" />
+    <FxCompile Include="..\..\Bin\Data\Shaders\Ground.fx" />
+    <FxCompile Include="..\..\bin\Data\Shaders\Leaf.fx" />
+    <FxCompile Include="..\..\bin\Data\Shaders\SpeedTree.fx" />
+    <FxCompile Include="..\..\bin\Data\Shaders\Utility.fx" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
