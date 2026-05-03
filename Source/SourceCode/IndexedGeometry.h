@@ -105,6 +105,8 @@ public:
         // vertex utility functions
         int                     GetTriangleCount(int nLodLevel) const;
         const float*            GetVertexCoord(unsigned int nVertexIndex) const;
+        // dimhotepus: Const-correct.
+        float*                  GetVertexCoord(unsigned int nVertexIndex);
         int                     GetVertexCount(void) const                          { return static_cast<int>(m_vCoords.size( ) / 3); }
         int                     GetVertexSize(void) const                           { return m_nVertexSize; }
         const unsigned char*    GetVertexTexIndices(void) const                     { return m_vTexIndices0.empty( ) ? NULL : &(m_vTexIndices0[0]); }
@@ -126,6 +128,8 @@ private:
         unsigned int            ColorFloatsToUInt(const float* pColor) const;
         void                    DeleteIndexData(void);
         const float*            GetOrigVertexCoord(unsigned int nVertexIndex) const;
+        // dimhotepus: Const-correct.
+        float*                  GetOrigVertexCoord(unsigned int nVertexIndex);
         int                     CompositeLength(int nLod, bool bToggleFaceOrdering) const;
 
         // general

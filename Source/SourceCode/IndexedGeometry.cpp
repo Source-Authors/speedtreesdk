@@ -265,7 +265,8 @@ void CIndexedGeometry::Transform(const stTransform& cTransform)
     for (int i = 0; i < nVertexCount; ++i)
     {
         // transform coordinates
-        float* pCoord = const_cast<float*>(GetVertexCoord(i));
+        // dimhotepus: Const-correct.
+        float* pCoord = GetVertexCoord(i);
         stVec3 cCoord(pCoord[0], pCoord[1], pCoord[2]);
         cCoord = cCoord * cTransform;
         memcpy(pCoord, cCoord.m_afData, 3 * sizeof(float));
@@ -275,7 +276,8 @@ void CIndexedGeometry::Transform(const stTransform& cTransform)
         if (m_bVertexWeighting &&
             !m_vOrigCoords.empty( ))
         {
-            float* pOrigCoord = const_cast<float*>(GetOrigVertexCoord(i));
+            // dimhotepus: Const-correct.
+            float* pOrigCoord = GetOrigVertexCoord(i);
             cCoord.Set(pOrigCoord[0], pOrigCoord[1], pOrigCoord[2]);
             cCoord = cCoord * cTransform;
             memcpy(pOrigCoord, cCoord.m_afData, 3 * sizeof(float));
@@ -648,6 +650,17 @@ const float* CIndexedGeometry::GetVertexCoord(unsigned int nVertexIndex) const
 
 
 ///////////////////////////////////////////////////////////////////////  
+//  CIndexedGeometry::GetVertexCoord definition
+
+float* CIndexedGeometry::GetVertexCoord(unsigned int nVertexIndex)
+{
+    st_assert(nVertexIndex < m_vCoords.size() / 3);
+
+    return &(m_vCoords[0]) + nVertexIndex * 3;
+}
+
+
+///////////////////////////////////////////////////////////////////////  
 //  CIndexedGeometry::GetVertexTexCoord definition
 
 const float* CIndexedGeometry::GetVertexTexCoord(CSpeedTreeRT::ETextureLayers eLayer, unsigned int nVertexIndex) const
@@ -664,6 +677,17 @@ const float* CIndexedGeometry::GetVertexTexCoord(CSpeedTreeRT::ETextureLayers eL
 const float* CIndexedGeometry::GetOrigVertexCoord(unsigned int nVertexIndex) const
 {
     st_assert(nVertexIndex < m_vOrigCoords.size( ) / 3);
+
+    return &(m_vOrigCoords[0]) + nVertexIndex * 3;
+}
+
+
+///////////////////////////////////////////////////////////////////////  
+//  CIndexedGeometry::GetOrigVertexCoord definition
+
+float* CIndexedGeometry::GetOrigVertexCoord(unsigned int nVertexIndex)
+{
+    st_assert(nVertexIndex < m_vOrigCoords.size() / 3);
 
     return &(m_vOrigCoords[0]) + nVertexIndex * 3;
 }
