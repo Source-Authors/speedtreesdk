@@ -31,6 +31,9 @@ stVec3 CSimpleBillboard::m_acBinormals[4];
 CSimpleBillboard::CSimpleBillboard( ) :
     m_bValid(false)
 {
+    // dimhotepus: Add missed initializer.
+    static_assert(std::numeric_limits<std::remove_extent_t<decltype(m_acTreeBillboard)>>::is_iec559);
+    memset(m_acTreeBillboard, 0, sizeof(m_acTreeBillboard));
     //lint -esym(1401, CSimpleBillboard::m_acTreeBillboard)  { it's static, so it's initialized above }
 }
 
