@@ -817,7 +817,8 @@ void CBranch::Parse(CTreeFileAccess& cFile)
 {
     ClearBranchInfo( );
 
-    int nSize = cFile.ParseToken( );
+    // dimhotepus: Parse int instead of token.
+    int nSize = cFile.ParseInt( );
     for (int i = 0; i < nSize; ++i)
     {
         SIdvBranchInfo sInfo;
