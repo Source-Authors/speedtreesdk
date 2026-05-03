@@ -1053,7 +1053,7 @@ bool CSpeedWindDef::Load(istream& isData)
 #ifndef STRIP_EXCEPTION_HANDLING    
     }
 
-    catch (istream::failure e)
+    catch (const istream::failure &)
     {
         bSuccess = false;
     }
@@ -1145,7 +1145,7 @@ bool CSpeedWindDef::Save(ostream& osData) const
 
 #ifndef STRIP_EXCEPTION_HANDLING
     }
-    catch (ostream::failure e)
+    catch (const ostream::failure &)
     {
         bSuccess = false;
     }
