@@ -546,8 +546,8 @@ CFrondEngine::EConditions CBranch::Compute(unsigned int nSeed,
                 float fWeightAtChild2 = fWindWeight2;
                 //if (nLevel - 1 == m_nWeightLevel || m_bPropagateFlexibility)
                 //{
-                    fWeightAtChild1 = VecInterpolate(m_pVertices[sBranch.m_nPreVertexIndex].m_fWindWeight1, m_pVertices[sBranch.m_nPreVertexIndex + 1].m_fWindWeight1, sBranch.m_fPercent);
-                    fWeightAtChild2 = VecInterpolate(m_pVertices[sBranch.m_nPreVertexIndex].m_fWindWeight2, m_pVertices[sBranch.m_nPreVertexIndex + 1].m_fWindWeight2, sBranch.m_fPercent);
+                    fWeightAtChild1 = VecInterpolate(m_pVertices[sBranch.m_nPreVertexIndex].m_fWindWeight1, m_pVertices[sBranch.m_nPreVertexIndex + 1].m_fWindWeight1, sBranch.m_fPercent); //-V519
+                    fWeightAtChild2 = VecInterpolate(m_pVertices[sBranch.m_nPreVertexIndex].m_fWindWeight2, m_pVertices[sBranch.m_nPreVertexIndex + 1].m_fWindWeight2, sBranch.m_fPercent); //-V519
                 //}
 
                 // another reseeding operation (for predictability in EstimateCompute)
