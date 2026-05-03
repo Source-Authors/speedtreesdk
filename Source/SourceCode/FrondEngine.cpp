@@ -1090,7 +1090,6 @@ void CFrondEngine::BuildGuideLods( )
 
         float fTargetVolume = fPercent * fTotalArea;
 
-        st_vector_frondguide vLodLevel;
         if (fTargetVolume > 0.0f)
         {
             float fLodArea = 0.0f;
