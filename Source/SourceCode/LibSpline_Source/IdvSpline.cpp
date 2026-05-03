@@ -46,6 +46,11 @@ stBezierSpline::stBezierSpline( ) :
     m_pSplinePoints(NULL)
 {
     ++m_nRefCount;
+    // dimhotepus: Add missed initializers.
+    static_assert(std::numeric_limits<std::remove_extent_t<decltype(m_afControlPointTangentLengths)>>::is_iec559);
+    memset(m_afControlPointTangentLengths, 0, sizeof(m_afControlPointTangentLengths));
+    static_assert(std::numeric_limits<std::remove_all_extents_t<decltype(m_acEvenlySpacedPoints)>>::is_iec559);
+    memset(m_acEvenlySpacedPoints, 0, sizeof(m_acEvenlySpacedPoints));
 }
 
 
