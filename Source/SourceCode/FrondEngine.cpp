@@ -302,7 +302,8 @@ void CFrondEngine::Save(CTreeFileAccess& cFile) const
 
 void CFrondEngine::StartGuide(int nNumVertices)
 {
-    m_vGuides.push_back(SFrondGuide( ));
+    // dimhotepus: Construct in place.
+    m_vGuides.emplace_back();
 
     m_vGuides.back( ).m_nNumVertices = nNumVertices;
     if (nNumVertices <= SFrondGuide::c_nMaxStackVertices)
