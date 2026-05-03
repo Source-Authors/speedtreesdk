@@ -222,6 +222,7 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <SDLCheck>true</SDLCheck>
       <ProgramDataBaseFileName>$(OutDir)SpeedTreeRT_Static_d.pdb</ProgramDataBaseFileName>
+      <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -252,6 +253,7 @@ copy "..\SourceCode\SpeedTreeMemory.h" ..\..\include
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <SDLCheck>true</SDLCheck>
       <ProgramDataBaseFileName>$(OutDir)SpeedTreeRT_Static_d.pdb</ProgramDataBaseFileName>
+      <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -282,6 +284,7 @@ copy "..\SourceCode\SpeedTreeMemory.h" ..\..\include
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <SDLCheck>true</SDLCheck>
       <ProgramDataBaseFileName>$(OutDir)SpeedTreeRT_Static.pdb</ProgramDataBaseFileName>
+      <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -313,6 +316,7 @@ copy "..\SourceCode\SpeedTreeMemory.h" ..\..\include
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <SDLCheck>true</SDLCheck>
       <ProgramDataBaseFileName>$(OutDir)SpeedTreeRT_Static.pdb</ProgramDataBaseFileName>
+      <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -342,6 +346,7 @@ copy "..\SourceCode\SpeedTreeMemory.h" ..\..\include
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <SDLCheck>true</SDLCheck>
       <ProgramDataBaseFileName>$(OutDir)SpeedTreeRT_Static_Eval_Zup_d.pdb</ProgramDataBaseFileName>
+      <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -372,6 +377,7 @@ copy "..\SourceCode\SpeedTreeMemory.h" ..\..\include
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <SDLCheck>true</SDLCheck>
       <ProgramDataBaseFileName>$(OutDir)SpeedTreeRT_Static_Eval_Zup_d.pdb</ProgramDataBaseFileName>
+      <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -401,6 +407,7 @@ copy "..\SourceCode\SpeedTreeMemory.h" ..\..\include
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <SDLCheck>true</SDLCheck>
       <ProgramDataBaseFileName>$(OutDir)SpeedTreeRT_Static_Eval_Zup.pdb</ProgramDataBaseFileName>
+      <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -431,6 +438,7 @@ copy "..\SourceCode\SpeedTreeMemory.h" ..\..\include
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <SDLCheck>true</SDLCheck>
       <ProgramDataBaseFileName>$(OutDir)SpeedTreeRT_Static_Eval_Zup.pdb</ProgramDataBaseFileName>
+      <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -460,6 +468,7 @@ copy "..\SourceCode\SpeedTreeMemory.h" ..\..\include
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <SDLCheck>true</SDLCheck>
       <ProgramDataBaseFileName>$(OutDir)SpeedTreeRT_Static_Eval_Yup_d.pdb</ProgramDataBaseFileName>
+      <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -490,6 +499,7 @@ copy "..\SourceCode\SpeedTreeMemory.h" ..\..\include
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <SDLCheck>true</SDLCheck>
       <ProgramDataBaseFileName>$(OutDir)SpeedTreeRT_Static_Eval_Yup_d.pdb</ProgramDataBaseFileName>
+      <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -519,6 +529,7 @@ copy "..\SourceCode\SpeedTreeMemory.h" ..\..\include
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <SDLCheck>true</SDLCheck>
       <ProgramDataBaseFileName>$(OutDir)SpeedTreeRT_Static_Eval_Yup.pdb</ProgramDataBaseFileName>
+      <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -549,6 +560,7 @@ copy "..\SourceCode\SpeedTreeMemory.h" ..\..\include
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <SDLCheck>true</SDLCheck>
       <ProgramDataBaseFileName>$(OutDir)SpeedTreeRT_Static_Eval_Yup.pdb</ProgramDataBaseFileName>
+      <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
