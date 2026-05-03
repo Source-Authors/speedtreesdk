@@ -19,6 +19,8 @@
 #include "../LibRandom_Source/IdvRandom.h"
 #include <map>
 #include <algorithm>
+// dimhotepus: Add std::numeric_limits.
+#include <limits>  // for std::numeric_limits.
 
 
 using namespace std;
@@ -257,11 +259,21 @@ template <class T> T IdvAtof(const char* pInput)
 ///////////////////////////////////////////////////////////////////////  
 //  NextToken
 
-static const char* NextToken(const char* pInput, char* pToken)
+// dimhotepus: Bounds-safe
+template<size_t szToken>
+static const char* NextToken(const char* pInput, char (&pToken)[szToken])
 {
     while (IdvIsSpace(*pInput))
         pInput++;
-    sscanf(pInput, "%s", pToken);
+
+    constexpr size_t fmtSize = std::numeric_limits<decltype(szToken)>::digits10 + 1;
+    char fmt[fmtSize];
+
+    static_assert(szToken >= 1 && szToken <= static_cast<size_t>(std::numeric_limits<int>::max()));
+    snprintf(fmt, std::size(fmt), "%%%ds", static_cast<int>(szToken - 1));
+    fmt[std::size(fmt) - 1] = '\0';
+
+    sscanf(pInput, fmt, pToken);
 
     return pInput + strlen(pToken);
 }
