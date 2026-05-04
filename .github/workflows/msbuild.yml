@@ -24,7 +24,7 @@ jobs:
     strategy:
       matrix:
         platform: [Win32, x64]
-        configuration: ['Debug (Full)', 'Release (Full)']
+        configuration: ['Debug (Eval Y-up)', 'Debug (Eval Z-up)', 'Debug (Full)', 'Release (Eval Y-up)', 'Release (Eval Z-up)', 'Release (Full)']
 
     steps:
     - uses: actions/checkout@v6
